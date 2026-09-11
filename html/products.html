@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse mobiles, clothes and footwear at Harek Mall.">
+    <title>Products | Harek Mall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to products</a>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo" href="/" aria-label="Harek Mall home">Harek<span>Mall</span></a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+            <nav class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a class="active" href="/products" aria-current="page">Products</a><a href="/products?category=mobiles">Mobiles</a><a href="/products?category=clothes">Clothes</a><a href="/products?category=footwear">Footwear</a></nav>
+            <div class="header-actions"><a href="/login" aria-label="Login or account">👤</a><a class="cart-link" href="/cart" aria-label="Shopping cart">🛒 <span class="cart-count" aria-label="0 products in cart">0</span></a></div>
+        </div>
+    </header>
+    <main id="main-content">
+        <section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Products</span></div><h1>Shop all products</h1><p>Explore practical tech, fresh fashion, and comfortable footwear picked for everyday life.</p></div></section>
+        <section class="catalogue-section"><div class="container">
+            <div class="catalogue-toolbar" aria-label="Product filters">
+                <label class="search-control"><span aria-hidden="true">⌕</span><span class="visually-hidden">Search products</span><input id="product-search" type="search" placeholder="Search products or brands"></label>
+                <label><span class="visually-hidden">Filter by category</span><select id="category-filter"><option value="">All categories</option><option value="mobiles">Mobiles</option><option value="clothes">Clothes</option><option value="footwear">Footwear</option></select></label>
+                <label><span class="visually-hidden">Sort products</span><select id="sort-products"><option value="featured">Sort: Featured</option><option value="price-low">Price: Low to high</option><option value="price-high">Price: High to low</option><option value="rating">Top rated</option></select></label>
+            </div>
+            <div class="catalogue-meta"><p id="product-count" aria-live="polite"></p><span>Free delivery on eligible orders</span></div>
+            <div class="product-grid" id="products-grid"></div>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="container footer-grid"><div><a class="logo" href="/">Harek<span>Mall</span></a><p>Your easy destination for everyday shopping.</p></div><div><h3>Shop</h3><ul><li><a href="/products">All products</a></li><li><a href="/products?category=mobiles">Mobiles</a></li><li><a href="/products?category=clothes">Clothes</a></li><li><a href="/products?category=footwear">Footwear</a></li></ul></div><div><h3>My account</h3><ul><li><a href="/login">Sign in</a></li><li><a href="/register">Create account</a></li><li><a href="/account">My orders</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="mailto:support@harekmall.in">support@harekmall.in</a></li><li>Mon–Sat, 9am–6pm</li><li>Secure online payments</li></ul></div></div><div class="container footer-bottom"><p>&copy; <span id="current-year">2026</span> Harek Mall. All rights reserved.</p></div></footer>
+    <script src="/js/data.js"></script><script src="/js/main.js"></script><script src="/js/products.js"></script><script src="/js/animations.js"></script>
+</body>
+</html>

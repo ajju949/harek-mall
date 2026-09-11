@@ -1,0 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#checkout-form"); const lines = document.querySelector("#checkout-items"); const total = document.querySelector("#checkout-total");
+    if (!form || !lines || !total) return;
+    const entries = HarekMall.getCart().map(entry => ({ ...entry, product: HAREK_PRODUCTS.find(product => product.id === entry.id) })).filter(entry => entry.product);
+    const amount = entries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
+    lines.innerHTML = entries.map(({ product, quantity }) => `<div class="order-line"><img src="${product.image}" alt=""><span>${product.name} × ${quantity}</span><strong>${HarekMall.formatPrice(product.price * quantity)}</strong></div>`).join(""); total.textContent = HarekMall.formatPrice(amount);
+    form.addEventListener("submit", event => { event.preventDefault(); if (!entries.length) { HarekMall.toast("Your cart is empty"); return; } const values = Object.fromEntries(new FormData(form)); if (!values.name || !values.phone || !values.address || !values.city || !values.pincode) { HarekMall.toast("Please complete your delivery address"); return; } const orders = JSON.parse(localStorage.getItem("harek-mall-orders") || "[]"); orders.unshift({ id: `HM${Date.now().toString().slice(-7)}`, date: new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }), total: amount, items: entries }); localStorage.setItem("harek-mall-orders", JSON.stringify(orders)); HarekMall.saveCart([]); HarekMall.toast("Order placed successfully!"); window.setTimeout(() => window.location.href = '/account", 550); });
+});

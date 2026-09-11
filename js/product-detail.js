@@ -1,0 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const root = document.querySelector("#product-detail");
+    if (!root) return;
+    const id = Number(new URLSearchParams(location.search).get("id")) || 1;
+    const product = HAREK_PRODUCTS.find(item => item.id === id);
+    if (!product) { root.innerHTML = `<div class="empty-state"><h2>Product not found</h2><p>This item may no longer be available.</p><a class="button button-primary" href='/products">Browse products</a></div>`; return; }
+    document.title = `${product.name} | Harek Mall`;
+    root.innerHTML = `<div class="product-detail-layout"><div class="product-gallery-main"><img src="${product.image}" alt="${product.name}"></div><div><p class="detail-category">${product.category}</p><h1 class="detail-title">${product.name}</h1><p class="detail-rating rating"><span>★ ${product.rating}</span> <small>${product.reviews} verified ratings</small></p><div class="detail-price"><strong>${HarekMall.formatPrice(product.price)}</strong><del>${HarekMall.formatPrice(product.oldPrice)}</del></div><p class="detail-saving">You save ${HarekMall.formatPrice(product.oldPrice - product.price)} (${product.badge})</p><p class="detail-description">${product.description}</p><div class="detail-options"><h3>${product.category === "clothes" || product.category === "footwear" ? "Choose a size" : "Colour"}</h3><div class="size-options">${(product.category === "clothes" || product.category === "footwear" ? ["S", "M", "L", "XL"] : ["Midnight", "Silver", "Blue"]).map(value => `<button type="button">${value}</button>`).join("")}</div></div><div class="detail-actions"><button class="button button-primary add-to-cart" data-product-id="${product.id}">Add to cart</button><button class="icon-button wishlist-toggle${HarekMall.getWishlist().includes(product.id) ? " is-active" : ""}" data-product-id="${product.id}" aria-label="Save to wishlist">♥</button></div><div class="delivery-card"><span>🚚</span><div><h3>Free delivery</h3><p>Delivery in 3–5 business days. Easy 30-day returns.</p></div></div></div></div>`;
+    HarekMall.bindCartButtons(root);
+});

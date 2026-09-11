@@ -1,0 +1,10 @@
+/* Shared controls and page-level UI components. */
+.form-field { margin-bottom: 1rem; }
+.form-field label { display: block; margin-bottom: .38rem; color: #344054; font-size: .86rem; font-weight: 700; }
+.form-field input, .form-field textarea, .form-field select { width: 100%; border: 1px solid #d9ddea; border-radius: 8px; padding: .72rem .78rem; background: #fff; color: var(--ink); outline: none; }
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(87,70,232,.12); }
+.form-error { min-height: 1.15rem; margin: .32rem 0 0; color: #c13434; font-size: .75rem; }
+.icon-button { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 1px solid #d9ddea; border-radius: 50%; background: #fff; color: var(--ink); }
+.icon-button:hover, .icon-button.is-active { border-color: #ff6d87; background: #fff0f3; color: #db3558; }
+.status-pill { display: inline-block; border-radius: 99px; padding: .25rem .55rem; background: #e5f6ef; color: var(--success); font-size: .72rem; font-weight: 800; }
+.notice { padding: .8rem 1rem; border: 1px solid #dcd8ff; border-radius: 8px; background: #f4f2ff; color: #4031a4; font-size: .86rem; }

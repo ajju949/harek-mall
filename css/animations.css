@@ -1,0 +1,7 @@
+@keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pop-in { 0% { transform: scale(.92); opacity: 0; } 75% { transform: scale(1.02); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes pulse { 50% { transform: scale(1.06); } }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.hero-content { animation: fade-up .7s ease both; }
+.toast.is-visible { animation: pop-in .25s ease both; }
